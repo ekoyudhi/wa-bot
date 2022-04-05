@@ -25,7 +25,7 @@ function start(client) {
         });
     } else if (message.isGroupMsg === true) {
       client
-        .sendText(message.from, "Pesan ke Group")
+        .sendText(message.from, message.text)
         .then((result) => {
           console.log('Result: ', result);
         })
