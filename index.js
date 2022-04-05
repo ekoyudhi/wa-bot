@@ -24,6 +24,7 @@ function start(client) {
           console.error('Error when sending: ', erro); //return object error
         });
     } else if (message.isGroupMsg === true) {
+      console.log(message);
       client
         .sendText(message.from, message.text)
         .then((result) => {
