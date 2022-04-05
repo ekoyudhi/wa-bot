@@ -23,6 +23,15 @@ function start(client) {
         .catch((erro) => {
           console.error('Error when sending: ', erro); //return object error
         });
+    } else if (message.isGroupMsg === true) {
+      client
+        .sendText(message.from, "Pesan ke Group")
+        .then((result) => {
+          console.log('Result: ', result);
+        })
+        .catch((erro) => {
+          console.log("Error: ", erro);
+        });
     }
   });
 }

@@ -4,11 +4,12 @@
   "description": "Project Whatsapp Bots",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ekoyudhi/wabot.git"
+    "url": "git+https://github.com/ekoyudhi/wa-bot.git"
   },
   "keywords": [
     "bots",
@@ -17,9 +18,9 @@
   "author": "ekoyudhi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ekoyudhi/wabot/issues"
+    "url": "https://github.com/ekoyudhi/wa-bot/issues"
   },
-  "homepage": "https://github.com/ekoyudhi/wabot#readme",
+  "homepage": "https://github.com/ekoyudhi/wa-bot#readme",
   "dependencies": {
     "venom-bot": "^4.0.3"
   }
