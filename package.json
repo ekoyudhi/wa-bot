@@ -1,0 +1,26 @@
+{
+  "name": "wabot",
+  "version": "1.0.0",
+  "description": "Project Whatsapp Bots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekoyudhi/wabot.git"
+  },
+  "keywords": [
+    "bots",
+    "whatsapp"
+  ],
+  "author": "ekoyudhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekoyudhi/wabot/issues"
+  },
+  "homepage": "https://github.com/ekoyudhi/wabot#readme",
+  "dependencies": {
+    "venom-bot": "^4.0.3"
+  }
+}
