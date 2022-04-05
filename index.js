@@ -3,10 +3,19 @@
 const venom = require('venom-bot');
 
 venom
-  .create({
-    session: 'session-name', //name of session
-    multidevice: false // for version not multidevice use false.(default: true)
-  })
+  .create(
+    'sessionName',
+    undefined,
+    (statusSession, session) => {
+      console.log('Status Session: ', statusSession);
+      //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken || chatsAvailable || deviceNotConnected || serverWssNotConnected || noOpenBrowser
+      //Create session wss return "serverClose" case server for close
+      console.log('Session name: ', session);
+    },
+    {
+      multidevice: false // for version not multidevice use false.(default: true)
+    }
+  )
   .then((client) => start(client))
   .catch((erro) => {
     console.log(erro);
