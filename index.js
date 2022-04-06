@@ -23,8 +23,9 @@ venom
     console.log(erro);
   });
 
-function start(client) {
-  client.onMessage(async (message) => {
+async function start(client) {
+  const browserSessionToken = await client.getSessionTokenBrowser();
+  await client.onMessage(async (message) => {
     if (message.body === 'Hi' && message.isGroupMsg === false) {
       client
         .sendText(message.from, 'Welcome Venom 🕷')
@@ -90,8 +91,6 @@ function start(client) {
     console.log(call);
     client.sendText(call.peerJid, "Sorry, I still can't answer calls");
   });
-
-  const browserSessionToken = await client.getSessionTokenBrowser();
 
   // Catch ctrl+C
   process.on('SIGINT', function() {
