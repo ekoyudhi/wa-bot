@@ -1,7 +1,7 @@
 // Supports ES6
 // import { create, Whatsapp } from 'venom-bot';
 const venom = require('venom-bot');
-import process from 'process';
+const process = require('process')
 
 venom
   .create(
