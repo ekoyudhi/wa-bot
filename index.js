@@ -1,6 +1,7 @@
 // Supports ES6
 // import { create, Whatsapp } from 'venom-bot';
 const venom = require('venom-bot');
+import process from 'process';
 
 venom
   .create(
@@ -13,7 +14,8 @@ venom
       console.log('Session name: ', session);
     },
     {
-      multidevice: false // for version not multidevice use false.(default: true)
+      multidevice: false, // for version not multidevice use false.(default: true)
+      createPathFileToken: true
     }
   )
   .then((client) => start(client))
@@ -22,7 +24,7 @@ venom
   });
 
 function start(client) {
-  client.onMessage((message) => {
+  client.onMessage(async (message) => {
     if (message.body === 'Hi' && message.isGroupMsg === false) {
       client
         .sendText(message.from, 'Welcome Venom 🕷')
@@ -89,8 +91,11 @@ function start(client) {
     client.sendText(call.peerJid, "Sorry, I still can't answer calls");
   });
 
+  const browserSessionToken = await client.getSessionTokenBrowser();
+
   // Catch ctrl+C
   process.on('SIGINT', function() {
     client.close();
+    console.log("CTRL+C ditekan")
   });
 }
